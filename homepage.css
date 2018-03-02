@@ -1,0 +1,100 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+.header {
+  margin: 0 auto;
+  height: 200px;
+  width: 1000px;
+  background: url("images/banner.jpg");
+  background-size: cover;
+}
+.menu ul {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+.menu ul li {
+  background: #343434;
+  list-style-type: none;
+  font-size: 25px;
+  width: 250px;
+  height: 60px;
+}
+.menu ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 60px;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 9px;
+}
+.content {
+  display: flex;
+  justify-content: center;
+}
+.content .left {
+  width: 200px;
+  height: 500px;
+  border: 1px solid black;
+}
+.content .left h2 {
+  text-align: center;
+}
+.content .left label {
+  cursor: pointer;
+}
+.content .left button {
+  display: block;
+  margin-top: 15px;
+}
+.content .middle {
+  width: 600px;
+  height: 800px;
+  border: 1px solid black;
+}
+.content .middle h1 {
+  text-align: center;
+}
+.content .middle .button {
+  display: flex;
+  flex-direction: column;
+}
+.content .right {
+  width: 200px;
+  height: 500px;
+  border: 1px solid black;
+}
+.content .right h2 {
+  text-align: center;
+}
+.content .right table tr td img {
+  width: 20px;
+  height: 20px;
+}
