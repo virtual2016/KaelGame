@@ -81,10 +81,49 @@ td {
 }
 .content .middle h1 {
   text-align: center;
+  font-size: 50px;
+  margin-bottom: 30px;
 }
-.content .middle .button {
+.content .middle .buttons_and_introduce {
+  display: flex;
+}
+.content .middle .buttons_and_introduce .buttons {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  width: 150px;
+  height: 300px;
+  margin-left: 50px;
+}
+.content .middle .buttons_and_introduce .buttons button {
+  height: 60px;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(#656565, #141414);
+}
+.content .middle .buttons_and_introduce .buttons button:hover {
+  color: #ffeb60;
+  background: linear-gradient(red, blue);
+}
+.content .middle .buttons_and_introduce .introduce {
+  position: relative;
+  margin-left: 15px;
+  width: 350px;
+  height: 300px;
+  background-color: #582722;
+  color: white;
+}
+.content .middle .buttons_and_introduce .introduce h3 {
+  text-align: center;
+}
+.content .middle .buttons_and_introduce .introduce .arrow {
+  position: absolute;
+  left: -30px;
+  top: 60px;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-right: 15px solid #582722;
 }
 .content .right {
   width: 200px;
