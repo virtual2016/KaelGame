@@ -55,3 +55,76 @@ td {
   color: white;
   letter-spacing: 9px;
 }
+.info {
+  width: 1000px;
+  height: 500px;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+.info .attributes .attributes_top {
+  height: 120px;
+}
+.info .attributes .attributes_top .picture_of_kael {
+  float: left;
+  width: 100px;
+  height: 100px;
+}
+.info .attributes .attributes_top .name {
+  font-size: 32px;
+}
+.info .attributes .attributes_top .name span {
+  font-size: 16px;
+}
+.info .attributes .attributes_top .attributes_top_3D img {
+  vertical-align: middle;
+  width: 25px;
+  height: 25px;
+}
+.info .attributes .attributes_bottom .first_line {
+  display: flex;
+}
+.info .attributes .attributes_bottom .second_line {
+  display: flex;
+}
+.info .attributes .attributes_bottom .hero-stats {
+  background-color: #66dd66;
+  text-align: center;
+  margin: 5px;
+  width: 70px;
+  height: 40px;
+  line-height: 20px;
+  font-size: 13px;
+}
+.abilities {
+  width: 1000px;
+  height: 3700px;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+.abilities .tips {
+  color: #66dd66;
+}
+.abilities img {
+  width: 45px;
+  margin-right: 15px;
+}
+.abilities .quash_wex {
+  display: flex;
+  justify-content: space-around;
+}
+.abilities .quash_wex .quash {
+  width: 460px;
+}
+.abilities .quash_wex .wex {
+  width: 460px;
+}
+.abilities .exort_invoke {
+  display: flex;
+  justify-content: space-around;
+}
+.abilities .exort_invoke .exort {
+  width: 460px;
+}
+.abilities .exort_invoke .invoke {
+  width: 460px;
+}
