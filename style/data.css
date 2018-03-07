@@ -30,7 +30,7 @@ td {
   margin: 0 auto;
   height: 200px;
   width: 1000px;
-  background: url("images/banner.jpg");
+  background: url("../images/banner.jpg");
   background-size: cover;
 }
 .menu ul {
@@ -60,6 +60,8 @@ td {
   height: 500px;
   border: 1px solid black;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
 }
 .info .attributes .attributes_top {
   height: 120px;

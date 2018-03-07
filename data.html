@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>hero data</title>
-    <link rel="stylesheet" href="data.css">
+    <link rel="stylesheet" href="style/data.css">
+    <script src="js/exporting.js"></script>
+    <script src="js/highcharts.js"></script>
+    <script src="js/highcharts-more.js"></script>
+    <!--<script src="js/jquery.js"></script>-->
 </head>
 <body>
 <div class="header"></div>
@@ -79,7 +83,9 @@
             </div>
         </div>
     </div>
-    <div class="pentagram"></div>
+    <div class="pentagram">
+        <div id="container" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto; border: 1px solid black"></div>
+    </div>
 </div>
 <div class="abilities">
     <div class="quash_wex">
@@ -334,5 +340,6 @@
         <p class="tips">tips: 此技能可以打断持续施法。</p>
     </div>
 </div>
+<script src="js/chart-kael.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>kaelgame</title>
-    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="style/homepage.css">
 </head>
 <body>
 <div class="header"></div>
@@ -19,9 +19,9 @@
     <div class="left">
         <h2>控制面板</h2>
         <h3>技能键位</h3>
-        <table>
+        <table class="skill-key">
             <tr>
-                <td>Q</td>
+                <td width="30px">Q</td>
                 <td>-</td>
                 <td>冰</td>
             </tr>
@@ -40,69 +40,69 @@
                 <td>-</td>
                 <td>元素祈唤</td>
             </tr>
-            <tr>
+            <tr id="skill-1">
                 <td>D</td>
                 <td>-</td>
                 <td>技能1</td>
             </tr>
-            <tr>
+            <tr id="skill-2">
                 <td>F</td>
                 <td>-</td>
                 <td>技能2</td>
             </tr>
-            <tr hidden="hidden">
+            <tr class="default-skills">
                 <td>Y</td>
                 <td>-</td>
                 <td>急速冷却</td>
             </tr>
-            <tr hidden="hidden">
+            <tr class="default-skills">
                 <td>V</td>
                 <td>-</td>
                 <td>幽灵漫步</td>
             </tr>
-            <tr hidden="hidden">
+            <tr class="default-skills">
                 <td>G</td>
                 <td>-</td>
                 <td>寒冰之墙</td>
             </tr>
-            <tr hidden="hidden">
+            <tr class="default-skills">
                 <td>C</td>
                 <td>-</td>
                 <td>电磁脉冲</td>
             </tr>
-            <tr hidden="hidden">
+            <tr class="default-skills">
                 <td>X</td>
                 <td>-</td>
                 <td>强袭飓风</td>
             </tr>
-            <tr hidden="hidden">
+            <tr class="default-skills">
                 <td>Z</td>
                 <td>-</td>
                 <td>灵动迅捷</td>
             </tr>
-            <tr hidden="hidden">
+            <tr class="default-skills">
                 <td>T</td>
                 <td>-</td>
                 <td>阳炎冲击</td>
             </tr>
-            <tr hidden="hidden">
+            <tr class="default-skills">
                 <td>F</td>
                 <td>-</td>
                 <td>熔炉精灵</td>
             </tr>
-            <tr hidden="hidden">
+            <tr class="default-skills">
                 <td>D</td>
                 <td>-</td>
                 <td>混沌陨石</td>
             </tr>
-            <tr hidden="hidden">
+            <tr class="default-skills">
                 <td>B</td>
                 <td>-</td>
                 <td>超震声波</td>
             </tr>
         </table>
         <br>
-        <label><input type="checkbox" style="cursor: pointer">使用默认键位</label>
+        <label><input id="default-key" type="checkbox" style="cursor: pointer">使用默认键位</label>
         <button type="button" style="cursor: pointer">恢复默认</button>
         <br>
         <label><input type="checkbox" style="cursor: pointer">音乐</label>
@@ -162,5 +162,6 @@
     </div>
 </div>
 <div class="footer"></div>
+<script src="js/homepage.js"></script>
 </body>
 </html>
