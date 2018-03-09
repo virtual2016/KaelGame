@@ -40,12 +40,12 @@
                 <td>-</td>
                 <td>元素祈唤</td>
             </tr>
-            <tr id="skill-1">
+            <tr id="skill_1">
                 <td>D</td>
                 <td>-</td>
                 <td>技能1</td>
             </tr>
-            <tr id="skill-2">
+            <tr id="skill_2">
                 <td>F</td>
                 <td>-</td>
                 <td>技能2</td>
@@ -102,7 +102,7 @@
             </tr>
         </table>
         <br>
-        <label><input id="default-key" type="checkbox" style="cursor: pointer">使用默认键位</label>
+        <label><input id="default_key" type="checkbox" style="cursor: pointer">使用默认键位</label>
         <button type="button" style="cursor: pointer">恢复默认</button>
         <br>
         <label><input type="checkbox" style="cursor: pointer">音乐</label>
@@ -110,17 +110,62 @@
     </div>
     <div class="middle">
         <h1>极速卡尔</h1>
-        <div class="buttons_and_introduce">
+        <div id="buttons_and_introduce" class="buttons-and-introduce">
             <div class="buttons">
-                <button type="button">极速模式</button>
-                <button type="button">实战模式</button>
+                <button id="btn_jsms" type="button">极速模式</button>
+                <button id="btn_szms" type="button">实战模式</button>
             </div>
             <div class="introduce">
-                <h3>极速模式</h3>
-                <h3 hidden="hidden">实战模式</h3>
+                <h3 class="jsms">极速模式</h3>
+                <h3 class="szms">实战模式</h3>
                 <div class="arrow"></div>
-                <p>每次随机给出一个技能，玩家只需召唤该技能，无需施放，总共20个技能。快来挑战你的极限手速吧！</p>
-                <p hidden="hidden">每次随机给出一组技能，总共15组，每组技能数量逐渐增多，玩家需要按顺序完成Combo！想成为卡尔大神？先来挑战你的反应能力吧！注意每个技能需要施放才算完成此技能。</p>
+                <p class="introduce_jsms">每次随机给出一个技能，玩家只需召唤该技能，无需施放，总共20个技能。快来挑战你的极限手速吧！</p>
+                <p class="introduce_szms">每次随机给出一组技能，总共15组，每组技能数量逐渐增多，玩家需要按顺序完成Combo！想成为卡尔大神？先来挑战你的反应能力吧！注意每个技能需要施放才算完成此技能。</p>
+            </div>
+        </div>
+        <div id="play_zone" class="play-zone">
+            <button class="start-button">开始游戏（点击）</button>
+            <div class="stopwatch">00:00</div>
+            <div class="jsms-zone">
+                <div>
+                    <img src="images/spells/ice_wall.png">
+                    <span>寒冰之墙</span>
+                </div>
+            </div>
+            <div class="orb-container">
+                <div id="orb3" class="orbs"></div>
+                <div id="orb2" class="orbs"></div>
+                <div id="orb1" class="orbs"></div>
+            </div>
+            <div class="skill-buttons">
+                <div class="first key-and-img">
+                    <div class="hotkeys hotkey1">Q</div>
+                    <img src="images/spells/quash.png">
+                </div>
+                <div class="second key-and-img">
+                    <div class="hotkeys hotkey1">W</div>
+                    <img src="images/spells/wex.png">
+                </div>
+                <div class="third key-and-img">
+                    <div class="hotkeys hotkey1">E</div>
+                    <img src="images/spells/exort.png">
+                </div>
+                <div class="fourth key-and-img">
+                    <div class="hotkeys hotkey1">D</div>
+                    <img src="images/spells/blank.gif">
+                </div>
+                <div class="fifth key-and-img">
+                    <div class="hotkeys hotkey1">F</div>
+                    <img src="images/spells/blank.gif">
+                </div>
+                <div class="sixth key-and-img">
+                    <div class="hotkeys hotkey1">R</div>
+                    <img src="images/spells/invoke.png">
+                </div>
+                <div class="control-buttons">
+                    <button id="btn_restart">重新开始</button>
+                    <button id="btn_back">返回</button>
+                </div>
             </div>
         </div>
     </div>
