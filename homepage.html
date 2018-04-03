@@ -1,8 +1,11 @@
+<!--命名原则：class用-连接，id用_连接，js变量名用驼峰法-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>kaelgame</title>
+    <title>KaelGame.com - Fastest way to master kael!</title>
     <link rel="stylesheet" href="style/homepage.css">
 </head>
 <body>
@@ -116,50 +119,48 @@
                 <button id="btn_szms" type="button">实战模式</button>
             </div>
             <div class="introduce">
-                <h3 class="jsms">极速模式</h3>
-                <h3 class="szms">实战模式</h3>
-                <div class="arrow"></div>
-                <p class="introduce_jsms">每次随机给出一个技能，玩家只需召唤该技能，无需施放，总共20个技能。快来挑战你的极限手速吧！</p>
-                <p class="introduce_szms">每次随机给出一组技能，总共15组，每组技能数量逐渐增多，玩家需要按顺序完成Combo！想成为卡尔大神？先来挑战你的反应能力吧！注意每个技能需要施放才算完成此技能。</p>
+                <h3 id="introduce_title" class="introduce-title">极速模式</h3>
+                <div id="arrow"></div>
+                <p id="introduce_detail" class="introduce-detail">每次随机给出一个技能，玩家只需召唤该技能，无需施放，总共20个技能。快来挑战你的极限手速吧！</p>
             </div>
         </div>
         <div id="play_zone" class="play-zone">
-            <button class="start-button">开始游戏（点击）</button>
-            <div class="stopwatch">00:00</div>
-            <div class="jsms-zone">
-                <div>
-                    <img src="images/spells/ice_wall.png">
-                    <span>寒冰之墙</span>
+            <button id="start_button" class="start-button">开始游戏（点击）</button>
+            <div id="stopwatch">00:00</div>
+            <div id="jsms_zone" class="jsms-zone">
+                <div id="img_and_text">
+                    <div id="img_zone"></div>
+                    <span id="text_zone"></span>
                 </div>
             </div>
             <div class="orb-container">
-                <div id="orb3" class="orbs"></div>
-                <div id="orb2" class="orbs"></div>
-                <div id="orb1" class="orbs"></div>
+                <div id="orb_1"></div>
+                <div id="orb_2"></div>
+                <div id="orb_3"></div>
             </div>
             <div class="skill-buttons">
                 <div class="first key-and-img">
-                    <div class="hotkeys hotkey1">Q</div>
+                    <div class="hotkeys hotkey-1">Q</div>
                     <img src="images/spells/quash.png">
                 </div>
                 <div class="second key-and-img">
-                    <div class="hotkeys hotkey1">W</div>
+                    <div class="hotkeys hotkey-2">W</div>
                     <img src="images/spells/wex.png">
                 </div>
                 <div class="third key-and-img">
-                    <div class="hotkeys hotkey1">E</div>
+                    <div class="hotkeys hotkey-3">E</div>
                     <img src="images/spells/exort.png">
                 </div>
                 <div class="fourth key-and-img">
-                    <div class="hotkeys hotkey1">D</div>
-                    <img src="images/spells/blank.gif">
+                    <div class="hotkeys hotkey-4">D</div>
+                    <img id="img_skill_1" src="images/spells/blank.gif">
                 </div>
                 <div class="fifth key-and-img">
-                    <div class="hotkeys hotkey1">F</div>
-                    <img src="images/spells/blank.gif">
+                    <div class="hotkeys hotkey-5">F</div>
+                    <img id="img_skill_2" src="images/spells/blank.gif">
                 </div>
                 <div class="sixth key-and-img">
-                    <div class="hotkeys hotkey1">R</div>
+                    <div class="hotkeys hotkey-6">R</div>
                     <img src="images/spells/invoke.png">
                 </div>
                 <div class="control-buttons">

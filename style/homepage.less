@@ -6,6 +6,7 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
 body {
   background-color: black;
   color: white;
+  font-family: "Microsoft YaHei";
 }
 
 .header {
@@ -101,16 +102,12 @@ body {
           color: white;
           background: linear-gradient(#656565, #141414);
           border-radius: 20px;
+          font-family: "Microsoft YaHei", sans-serif;
+          font-size: 18px;
         }
         button:hover {
           color: #ffeb60;
           background: linear-gradient(red, blue);
-          .introduce_szms{
-            display: block;
-          }
-          .szms{
-            display: block;
-          }
         }
       }
       .introduce {
@@ -123,19 +120,17 @@ body {
         h3 {
           text-align: center;
         }
-        .szms{
+        .szms {
           display: none;
         }
-        .introduce_szms{
+        .introduce_szms {
           display: none;
         }
-        .arrow {
+        #arrow {
           position: absolute;
           left: -30px;
           top: 60px;
-          border-top: 15px solid transparent;
-          border-bottom: 15px solid transparent;
-          border-left: 15px solid transparent;
+          border: 15px solid transparent;
           border-right: 15px solid #582722;
         }
       }
@@ -154,32 +149,69 @@ body {
         color: white;
         font-weight: bold;
       }
-      .stopwatch {
+      #stopwatch {
         font-size: 40px;
         font-weight: bold;
         margin-top: 20px;
-        text-shadow: 0px 0px 10px #9FE6E2;
+        text-shadow: 0 0 10px #9FE6E2;
       }
       .jsms-zone {
         height: 200px;
         display: flex;
         align-items: center;
         justify-content: center;
-        div {
+        #img_and_text {
           padding-top: 10px;
           padding-bottom: 10px;
-          box-shadow: 0px 0px 50px #68B4FB;
+          box-shadow: 0 0 50px #68B4FB;
           width: 80%;
-          img {
+          height: 60px;
+          #img_zone {
             vertical-align: middle;
             width: 60px;
             height: 60px;
-            box-shadow: 0px 0px 10px #CEEBFF;
+            box-shadow: 0 0 10px #CEEBFF;
+            //display: inline-block;
+            background-size: auto;
+            display: none;
           }
+
+          .img-jslq {
+            background-image: url("../images/spells/cold_snap.png");
+          }
+          .img-ylmb {
+            background-image: url("../images/spells/ghost_walk.png");
+          }
+          .img-hbzq {
+            background-image: url("../images/spells/ice_wall.png");
+          }
+          .img-dcmc {
+            background-image: url("../images/spells/emp.png");
+          }
+          .img-qxjf {
+            background-image: url("../images/spells/tornado.png");
+          }
+          .img-ldxj {
+            background-image: url("../images/spells/alacrity.png");
+          }
+          .img-yycj {
+            background-image: url("../images/spells/sun_strike.png");
+          }
+          .img-rljl {
+            background-image: url("../images/spells/forge_spirit.png");
+          }
+          .img-hdys {
+            background-image: url("../images/spells/chaos_meteor.png");
+          }
+          .img-czsb {
+            background-image: url("../images/spells/deafening_blast.png");
+          }
+
           span {
             font-size: 30px;
             margin-left: 30px;
             vertical-align: middle;
+            display: none;
           }
         }
 
@@ -188,13 +220,26 @@ body {
         display: flex;
         justify-content: center;
         margin-bottom: 30px;
-        .orbs {
+        #orb_1, #orb_2, #orb_3 {
           width: 100px;
           height: 100px;
           border-radius: 50px;
           border: 1px solid #6e6e6e;
           margin: 5px;
         }
+        .orb-1 {
+          background-image: url("../images/spells/quash.png");
+          background-size: 100% 100%;
+        }
+        .orb-2 {
+          background-image: url("../images/spells/wex.png");
+          background-size: 100% 100%;
+        }
+        .orb-3 {
+          background-image: url("../images/spells/exort.png");
+          background-size: 100% 100%;
+        }
+
       }
       .skill-buttons {
         display: flex;
@@ -231,6 +276,36 @@ body {
           position: absolute;
           left: 512px;
         }
+        .img-jslq {
+          background-image: url("../images/spells/cold_snap.png");
+        }
+        .img-ylmb {
+          background-image: url("../images/spells/ghost_walk.png");
+        }
+        .img-hbzq {
+          background-image: url("../images/spells/ice_wall.png");
+        }
+        .img-dcmc {
+          background-image: url("../images/spells/emp.png");
+        }
+        .img-qxjf {
+          background-image: url("../images/spells/tornado.png");
+        }
+        .img-ldxj {
+          background-image: url("../images/spells/alacrity.png");
+        }
+        .img-yycj {
+          background-image: url("../images/spells/sun_strike.png");
+        }
+        .img-rljl {
+          background-image: url("../images/spells/forge_spirit.png");
+        }
+        .img-hdys {
+          background-image: url("../images/spells/chaos_meteor.png");
+        }
+        .img-czsb {
+          background-image: url("../images/spells/deafening_blast.png");
+        }
         .hotkeys {
           position: absolute;
           width: 21px;
@@ -258,6 +333,7 @@ body {
         }
       }
     }
+
   }
   .right {
     width: 200px;

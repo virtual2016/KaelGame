@@ -29,6 +29,7 @@ td {
 body {
   background-color: black;
   color: white;
+  font-family: "Microsoft YaHei";
 }
 .header {
   margin: 0 auto;
@@ -123,16 +124,12 @@ body {
   color: white;
   background: linear-gradient(#656565, #141414);
   border-radius: 20px;
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 18px;
 }
 .content .middle .buttons-and-introduce .buttons button:hover {
   color: #ffeb60;
   background: linear-gradient(red, blue);
-}
-.content .middle .buttons-and-introduce .buttons button:hover .introduce_szms {
-  display: block;
-}
-.content .middle .buttons-and-introduce .buttons button:hover .szms {
-  display: block;
 }
 .content .middle .buttons-and-introduce .introduce {
   position: relative;
@@ -151,13 +148,11 @@ body {
 .content .middle .buttons-and-introduce .introduce .introduce_szms {
   display: none;
 }
-.content .middle .buttons-and-introduce .introduce .arrow {
+.content .middle .buttons-and-introduce .introduce #arrow {
   position: absolute;
   left: -30px;
   top: 60px;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-left: 15px solid transparent;
+  border: 15px solid transparent;
   border-right: 15px solid #582722;
 }
 .content .middle .play-zone {
@@ -175,11 +170,11 @@ body {
   color: white;
   font-weight: bold;
 }
-.content .middle .play-zone .stopwatch {
+.content .middle .play-zone #stopwatch {
   font-size: 40px;
   font-weight: bold;
   margin-top: 20px;
-  text-shadow: 0px 0px 10px #9FE6E2;
+  text-shadow: 0 0 10px #9FE6E2;
 }
 .content .middle .play-zone .jsms-zone {
   height: 200px;
@@ -187,34 +182,82 @@ body {
   align-items: center;
   justify-content: center;
 }
-.content .middle .play-zone .jsms-zone div {
+.content .middle .play-zone .jsms-zone #img_and_text {
   padding-top: 10px;
   padding-bottom: 10px;
-  box-shadow: 0px 0px 50px #68B4FB;
+  box-shadow: 0 0 50px #68B4FB;
   width: 80%;
+  height: 60px;
 }
-.content .middle .play-zone .jsms-zone div img {
+.content .middle .play-zone .jsms-zone #img_and_text #img_zone {
   vertical-align: middle;
   width: 60px;
   height: 60px;
-  box-shadow: 0px 0px 10px #CEEBFF;
+  box-shadow: 0 0 10px #CEEBFF;
+  background-size: auto;
+  display: none;
 }
-.content .middle .play-zone .jsms-zone div span {
+.content .middle .play-zone .jsms-zone #img_and_text .img-jslq {
+  background-image: url("../images/spells/cold_snap.png");
+}
+.content .middle .play-zone .jsms-zone #img_and_text .img-ylmb {
+  background-image: url("../images/spells/ghost_walk.png");
+}
+.content .middle .play-zone .jsms-zone #img_and_text .img-hbzq {
+  background-image: url("../images/spells/ice_wall.png");
+}
+.content .middle .play-zone .jsms-zone #img_and_text .img-dcmc {
+  background-image: url("../images/spells/emp.png");
+}
+.content .middle .play-zone .jsms-zone #img_and_text .img-qxjf {
+  background-image: url("../images/spells/tornado.png");
+}
+.content .middle .play-zone .jsms-zone #img_and_text .img-ldxj {
+  background-image: url("../images/spells/alacrity.png");
+}
+.content .middle .play-zone .jsms-zone #img_and_text .img-yycj {
+  background-image: url("../images/spells/sun_strike.png");
+}
+.content .middle .play-zone .jsms-zone #img_and_text .img-rljl {
+  background-image: url("../images/spells/forge_spirit.png");
+}
+.content .middle .play-zone .jsms-zone #img_and_text .img-hdys {
+  background-image: url("../images/spells/chaos_meteor.png");
+}
+.content .middle .play-zone .jsms-zone #img_and_text .img-czsb {
+  background-image: url("../images/spells/deafening_blast.png");
+}
+.content .middle .play-zone .jsms-zone #img_and_text span {
   font-size: 30px;
   margin-left: 30px;
   vertical-align: middle;
+  display: none;
 }
 .content .middle .play-zone .orb-container {
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
 }
-.content .middle .play-zone .orb-container .orbs {
+.content .middle .play-zone .orb-container #orb_1,
+.content .middle .play-zone .orb-container #orb_2,
+.content .middle .play-zone .orb-container #orb_3 {
   width: 100px;
   height: 100px;
   border-radius: 50px;
   border: 1px solid #6e6e6e;
   margin: 5px;
+}
+.content .middle .play-zone .orb-container .orb-1 {
+  background-image: url("../images/spells/quash.png");
+  background-size: 100% 100%;
+}
+.content .middle .play-zone .orb-container .orb-2 {
+  background-image: url("../images/spells/wex.png");
+  background-size: 100% 100%;
+}
+.content .middle .play-zone .orb-container .orb-3 {
+  background-image: url("../images/spells/exort.png");
+  background-size: 100% 100%;
 }
 .content .middle .play-zone .skill-buttons {
   display: flex;
@@ -251,6 +294,36 @@ body {
 .content .middle .play-zone .skill-buttons .sixth {
   position: absolute;
   left: 512px;
+}
+.content .middle .play-zone .skill-buttons .img-jslq {
+  background-image: url("../images/spells/cold_snap.png");
+}
+.content .middle .play-zone .skill-buttons .img-ylmb {
+  background-image: url("../images/spells/ghost_walk.png");
+}
+.content .middle .play-zone .skill-buttons .img-hbzq {
+  background-image: url("../images/spells/ice_wall.png");
+}
+.content .middle .play-zone .skill-buttons .img-dcmc {
+  background-image: url("../images/spells/emp.png");
+}
+.content .middle .play-zone .skill-buttons .img-qxjf {
+  background-image: url("../images/spells/tornado.png");
+}
+.content .middle .play-zone .skill-buttons .img-ldxj {
+  background-image: url("../images/spells/alacrity.png");
+}
+.content .middle .play-zone .skill-buttons .img-yycj {
+  background-image: url("../images/spells/sun_strike.png");
+}
+.content .middle .play-zone .skill-buttons .img-rljl {
+  background-image: url("../images/spells/forge_spirit.png");
+}
+.content .middle .play-zone .skill-buttons .img-hdys {
+  background-image: url("../images/spells/chaos_meteor.png");
+}
+.content .middle .play-zone .skill-buttons .img-czsb {
+  background-image: url("../images/spells/deafening_blast.png");
 }
 .content .middle .play-zone .skill-buttons .hotkeys {
   position: absolute;
