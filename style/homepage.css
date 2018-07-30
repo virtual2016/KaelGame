@@ -197,34 +197,34 @@ body {
   background-size: auto;
   display: none;
 }
-.content .middle .play-zone .jsms-zone #img_and_text .img-jslq {
+.content .middle .play-zone .jsms-zone #img_and_text .cold_snap {
   background-image: url("../images/spells/cold_snap.png");
 }
-.content .middle .play-zone .jsms-zone #img_and_text .img-ylmb {
+.content .middle .play-zone .jsms-zone #img_and_text .ghost_walk {
   background-image: url("../images/spells/ghost_walk.png");
 }
-.content .middle .play-zone .jsms-zone #img_and_text .img-hbzq {
+.content .middle .play-zone .jsms-zone #img_and_text .ice_wall {
   background-image: url("../images/spells/ice_wall.png");
 }
-.content .middle .play-zone .jsms-zone #img_and_text .img-dcmc {
+.content .middle .play-zone .jsms-zone #img_and_text .emp {
   background-image: url("../images/spells/emp.png");
 }
-.content .middle .play-zone .jsms-zone #img_and_text .img-qxjf {
+.content .middle .play-zone .jsms-zone #img_and_text .tornado {
   background-image: url("../images/spells/tornado.png");
 }
-.content .middle .play-zone .jsms-zone #img_and_text .img-ldxj {
+.content .middle .play-zone .jsms-zone #img_and_text .alacrity {
   background-image: url("../images/spells/alacrity.png");
 }
-.content .middle .play-zone .jsms-zone #img_and_text .img-yycj {
+.content .middle .play-zone .jsms-zone #img_and_text .sun_strike {
   background-image: url("../images/spells/sun_strike.png");
 }
-.content .middle .play-zone .jsms-zone #img_and_text .img-rljl {
+.content .middle .play-zone .jsms-zone #img_and_text .forge_spirit {
   background-image: url("../images/spells/forge_spirit.png");
 }
-.content .middle .play-zone .jsms-zone #img_and_text .img-hdys {
+.content .middle .play-zone .jsms-zone #img_and_text .chaos_meteor {
   background-image: url("../images/spells/chaos_meteor.png");
 }
-.content .middle .play-zone .jsms-zone #img_and_text .img-czsb {
+.content .middle .play-zone .jsms-zone #img_and_text .deafening_blast {
   background-image: url("../images/spells/deafening_blast.png");
 }
 .content .middle .play-zone .jsms-zone #img_and_text span {
@@ -247,15 +247,15 @@ body {
   border: 1px solid #6e6e6e;
   margin: 5px;
 }
-.content .middle .play-zone .orb-container .orb-1 {
+.content .middle .play-zone .orb-container .quash {
   background-image: url("../images/spells/quash.png");
   background-size: 100% 100%;
 }
-.content .middle .play-zone .orb-container .orb-2 {
+.content .middle .play-zone .orb-container .wex {
   background-image: url("../images/spells/wex.png");
   background-size: 100% 100%;
 }
-.content .middle .play-zone .orb-container .orb-3 {
+.content .middle .play-zone .orb-container .exort {
   background-image: url("../images/spells/exort.png");
   background-size: 100% 100%;
 }
@@ -287,43 +287,73 @@ body {
   position: absolute;
   left: 316px;
 }
+.content .middle .play-zone .skill-buttons .fourth .cold_snap {
+  background-image: url("../images/spells/cold_snap.png");
+}
+.content .middle .play-zone .skill-buttons .fourth .ghost_walk {
+  background-image: url("../images/spells/ghost_walk.png");
+}
+.content .middle .play-zone .skill-buttons .fourth .ice_wall {
+  background-image: url("../images/spells/ice_wall.png");
+}
+.content .middle .play-zone .skill-buttons .fourth .emp {
+  background-image: url("../images/spells/emp.png");
+}
+.content .middle .play-zone .skill-buttons .fourth .tornado {
+  background-image: url("../images/spells/tornado.png");
+}
+.content .middle .play-zone .skill-buttons .fourth .alacrity {
+  background-image: url("../images/spells/alacrity.png");
+}
+.content .middle .play-zone .skill-buttons .fourth .sun_strike {
+  background-image: url("../images/spells/sun_strike.png");
+}
+.content .middle .play-zone .skill-buttons .fourth .forge_spirit {
+  background-image: url("../images/spells/forge_spirit.png");
+}
+.content .middle .play-zone .skill-buttons .fourth .chaos_meteor {
+  background-image: url("../images/spells/chaos_meteor.png");
+}
+.content .middle .play-zone .skill-buttons .fourth .deafening_blast {
+  background-image: url("../images/spells/deafening_blast.png");
+}
 .content .middle .play-zone .skill-buttons .fifth {
   position: absolute;
   left: 414px;
 }
+.content .middle .play-zone .skill-buttons .fifth .cold_snap {
+  background-image: url("../images/spells/cold_snap.png");
+}
+.content .middle .play-zone .skill-buttons .fifth .ghost_walk {
+  background-image: url("../images/spells/ghost_walk.png");
+}
+.content .middle .play-zone .skill-buttons .fifth .ice_wall {
+  background-image: url("../images/spells/ice_wall.png");
+}
+.content .middle .play-zone .skill-buttons .fifth .emp {
+  background-image: url("../images/spells/emp.png");
+}
+.content .middle .play-zone .skill-buttons .fifth .tornado {
+  background-image: url("../images/spells/tornado.png");
+}
+.content .middle .play-zone .skill-buttons .fifth .alacrity {
+  background-image: url("../images/spells/alacrity.png");
+}
+.content .middle .play-zone .skill-buttons .fifth .sun_strike {
+  background-image: url("../images/spells/sun_strike.png");
+}
+.content .middle .play-zone .skill-buttons .fifth .forge_spirit {
+  background-image: url("../images/spells/forge_spirit.png");
+}
+.content .middle .play-zone .skill-buttons .fifth .chaos_meteor {
+  background-image: url("../images/spells/chaos_meteor.png");
+}
+.content .middle .play-zone .skill-buttons .fifth .deafening_blast {
+  background-image: url("../images/spells/deafening_blast.png");
+}
 .content .middle .play-zone .skill-buttons .sixth {
   position: absolute;
   left: 512px;
-}
-.content .middle .play-zone .skill-buttons .img-jslq {
-  background-image: url("../images/spells/cold_snap.png");
-}
-.content .middle .play-zone .skill-buttons .img-ylmb {
-  background-image: url("../images/spells/ghost_walk.png");
-}
-.content .middle .play-zone .skill-buttons .img-hbzq {
-  background-image: url("../images/spells/ice_wall.png");
-}
-.content .middle .play-zone .skill-buttons .img-dcmc {
-  background-image: url("../images/spells/emp.png");
-}
-.content .middle .play-zone .skill-buttons .img-qxjf {
-  background-image: url("../images/spells/tornado.png");
-}
-.content .middle .play-zone .skill-buttons .img-ldxj {
-  background-image: url("../images/spells/alacrity.png");
-}
-.content .middle .play-zone .skill-buttons .img-yycj {
-  background-image: url("../images/spells/sun_strike.png");
-}
-.content .middle .play-zone .skill-buttons .img-rljl {
-  background-image: url("../images/spells/forge_spirit.png");
-}
-.content .middle .play-zone .skill-buttons .img-hdys {
-  background-image: url("../images/spells/chaos_meteor.png");
-}
-.content .middle .play-zone .skill-buttons .img-czsb {
-  background-image: url("../images/spells/deafening_blast.png");
 }
 .content .middle .play-zone .skill-buttons .hotkeys {
   position: absolute;

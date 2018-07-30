@@ -103,89 +103,130 @@ btnRestart.onclick = function () {
 
 //点击各个技能键位
 
-//定义一个秒表
-function stopWatches() {
-    var o = new Object();
-    var s = "00", m = 0;
-    o.start= function () {
-        setInterval(function () {
-            if (m === 100) {
-                m = 0;
-                s++;
-                s = s < 10 ? "0" + s : s;
-            }
-            m++;
-            m = m < 10 ? "0" + m : m;
-            stopWatch.innerText = s + ":" + m;
-        }, 10);
-    };
-    return o;
+//定义一个秒表的构造函数
+function StopWatch() {
 }
 
+StopWatch.prototype.start = function () {
+    var s = "00", m = 0;
+    this.time = setInterval(function () {
+        if (m === 100) {
+            m = 0;
+            s++;
+            s = s < 10 ? "0" + s : s;
+        }
+        m++;
+        m = m < 10 ? "0" + m : m;
+        stopWatch.innerText = s + ":" + m;
+    }, 10);
+    console.log(this);
+};
+StopWatch.prototype.stop = function () {
+};
 
-var numberOfSkills = 20;
-//点击“开始游戏”按钮
-startButton.addEventListener("click", function () {
-    startButton.disabled = "disabled";//点击开始按钮之后，让其失去点击功能
-    var stopWatch = window.stopWatches();
-    stopWatch.start();
-});
+//定义一个游戏的构造函数
+function Game() {
+}
 
-startButton.addEventListener("click", function () {
-    //随机出现技能图片和名字
-    var arr = [
-        {text: "急速冷却", nameOfClass: "img-jslq"},
-        {text: "幽灵漫步", nameOfClass: "img-ylmb"},
-        {text: "寒冰之墙", nameOfClass: "img-hbzq"},
-        {text: "电磁脉冲", nameOfClass: "img-dcmc"},
-        {text: "强袭飓风", nameOfClass: "img-qxjf"},
-        {text: "灵动迅捷", nameOfClass: "img-ldxj"},
-        {text: "阳炎冲击", nameOfClass: "img-yycj"},
-        {text: "熔炉精灵", nameOfClass: "img-rljl"},
-        {text: "混沌陨石", nameOfClass: "img-hdys"},
-        {text: "超震声波", nameOfClass: "img-czsb"}
+Game.prototype.randomSkill = function () {
+    var arr = [           //数组中包括10个对象，每个对象都有text和nameOfClass两个属性
+        {text: "急速冷却", nameOfClass: "cold_snap"},
+        {text: "幽灵漫步", nameOfClass: "ghost_walk"},
+        {text: "寒冰之墙", nameOfClass: "ice_wall"},
+        {text: "电磁脉冲", nameOfClass: "emp"},
+        {text: "强袭飓风", nameOfClass: "tornado"},
+        {text: "灵动迅捷", nameOfClass: "alacrity"},
+        {text: "阳炎冲击", nameOfClass: "sun_strike"},
+        {text: "熔炉精灵", nameOfClass: "forge_spirit"},
+        {text: "混沌陨石", nameOfClass: "chaos_meteor"},
+        {text: "超震声波", nameOfClass: "deafening_blast"}
     ];
-    var num = Math.floor(Math.random() * 10);
+
+    var num = Math.floor(Math.random() * 10);//num范围为[0,9]
     imgZone.className = arr[num].nameOfClass;
     textZone.innerText = arr[num].text;
     imgZone.style.display = "inline-block";
     textZone.style.display = "inline";
-});
 
+};
+
+var numberOfSkills = 1;
+
+
+//点击“开始游戏”按钮
 startButton.addEventListener("click", function () {
-    //判断玩家是否操作正确
-    if (true) {
-        numberOfSkills--;
-    }
+
+    //点击开始按钮之后，让其失去点击功能
+    startButton.disabled = "disabled";
     startButton.innerText = "剩余技能" + numberOfSkills;
-});
 
-startButton.addEventListener("click", function () {
+    //秒表开始计时
+    var stopWatch = new StopWatch();
+
+
+    stopWatch.start();
+    //随机出现技能图片和名字
+    var game = new Game();
+    game.randomSkill();
+
+    //对键盘进行监听
     document.addEventListener("keydown", function (event) {
+
+        var quashNum = 0;
+        var wexNum = 0;
+        var exortNum = 0;
+
+        for (var i = 0; i < 3; i++) {
+            var orbArray = [orb1, orb2, orb3];
+            switch (orbArray[i].className) {
+                case 'quash':
+                    quashNum += 1;
+                    break;
+                case 'wex':
+                    wexNum += 1;
+                    break;
+                case 'exort':
+                    exortNum += 1;
+                    break;
+            }
+        }
+        var invokeCode = "s" + quashNum + wexNum + exortNum;
+
         if (event.key === "q" || event.key === "w" || event.key === "e") {
             orb1.className = orb2.className;
             orb2.className = orb3.className;
             orb3.className = orbClassName(event.key);
-        } else if (event.key === "r") {
-            imgSkill2.src = imgSkill1.src;
-            imgSkill1.src = "images/spells/"+threeSkills.s003+".png";
+        } else if (event.key === "r" && imgSkill1.className !== invokeSkillsName[invokeCode]) {  //需要满足两个条件（1，按了r键 2，与上一次的组合不同）才改变技能图片
+            imgSkill2.className = imgSkill1.className;
+            imgSkill1.className = invokeSkillsName[invokeCode];
         }
+
+        if (imgSkill1.className === imgZone.className) {                    //如果玩家操作正确
+            startButton.innerText = "剩余技能" + --numberOfSkills;         //技能数显示减1
+            game.randomSkill();       //重新随机出技能题目
+        }
+        if (numberOfSkills === 0) {
+            startButton.innerText = "游戏完成！";
+            stopWatch.stop();
+        }
+
     });
 });
 
+//声明函数，用来接收输入的按键，并返回与之对应的class name
 function orbClassName(key) {
     if (key === "q") {
-        return "orb-1";
+        return "quash";
     } else if (key === "w") {
-        return "orb-2";
+        return "wex";
     } else if (key === "e") {
-        return "orb-3";
+        return "exort";
     }
 }
 
-
-var threeSkills = {
-    S300: "cold_snap",
+//技能和技能名的键值对
+var invokeSkillsName = {
+    s300: "cold_snap",
     s210: "ghost_walk",
     s201: "ice_wall",
     s030: "emp",
