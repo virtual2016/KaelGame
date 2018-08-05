@@ -127,6 +127,10 @@
         <div id="play_zone" class="play-zone">
             <button id="start_button" class="start-button">开始游戏（点击）</button>
             <div id="stopwatch">00:00</div>
+            <div id="over-control-buttons">
+                <button class="restart">重新开始</button>
+                <button class="back">返回</button>
+            </div>
             <div id="jsms_zone" class="jsms-zone">
                 <div id="img_and_text">
                     <div id="img_zone"></div>
@@ -164,8 +168,8 @@
                     <img src="images/spells/invoke.png">
                 </div>
                 <div class="control-buttons">
-                    <button id="btn_restart">重新开始</button>
-                    <button id="btn_back">返回</button>
+                    <button class="restart" id="btn_restart">重新开始</button>
+                    <button class="back" id="btn_back">返回</button>
                 </div>
             </div>
         </div>
@@ -209,5 +213,6 @@
 </div>
 <div class="footer"></div>
 <script src="js/homepage.js"></script>
+<script src="js/stopwatch.js"></script>
 </body>
 </html>
