@@ -93,7 +93,6 @@ btnSzms.onclick = function () {
 
 btnRestart.onclick = function () {
     startButton.disabled = false;
-
 };
 //点击“恢复默认”按钮
 
@@ -102,27 +101,6 @@ btnRestart.onclick = function () {
 //点击“音效”按钮
 
 //点击各个技能键位
-
-//定义一个秒表的构造函数
-function StopWatch() {
-}
-
-StopWatch.prototype.start = function () {
-    var s = "00", m = 0;
-    this.time = setInterval(function () {
-        if (m === 100) {
-            m = 0;
-            s++;
-            s = s < 10 ? "0" + s : s;
-        }
-        m++;
-        m = m < 10 ? "0" + m : m;
-        stopWatch.innerText = s + ":" + m;
-    }, 10);
-    console.log(this);
-};
-StopWatch.prototype.stop = function () {
-};
 
 //定义一个游戏的构造函数
 function Game() {
@@ -161,10 +139,10 @@ startButton.addEventListener("click", function () {
     startButton.innerText = "剩余技能" + numberOfSkills;
 
     //秒表开始计时
-    var stopWatch = new StopWatch();
+    var stopwatch = new Stopwatch();
 
 
-    stopWatch.start();
+    stopwatch.start();
     //随机出现技能图片和名字
     var game = new Game();
     game.randomSkill();
@@ -207,7 +185,7 @@ startButton.addEventListener("click", function () {
         }
         if (numberOfSkills === 0) {
             startButton.innerText = "游戏完成！";
-            stopWatch.stop();
+            stopwatch.stop();
         }
 
     });
