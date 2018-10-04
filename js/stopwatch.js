@@ -18,3 +18,8 @@ Stopwatch.prototype.start = function () {
 Stopwatch.prototype.stop = function () {
     clearInterval(this.time);
 };
+
+Stopwatch.prototype.reset = function () {
+    clearInterval(this.time);
+    stopWatch.innerText = "00:00";
+};

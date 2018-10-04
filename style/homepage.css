@@ -31,6 +31,9 @@ body {
   color: white;
   font-family: "Microsoft YaHei";
 }
+body button:focus {
+  outline: none;
+}
 .header {
   margin: 0 auto;
   height: 200px;
@@ -176,6 +179,17 @@ body {
   margin-top: 20px;
   text-shadow: 0 0 10px #9FE6E2;
 }
+.content .middle .play-zone #over_control_buttons {
+  padding-top: 15px;
+}
+.content .middle .play-zone #over_control_buttons .btn-restart,
+.content .middle .play-zone #over_control_buttons .btn-exit {
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 10px 30px;
+}
 .content .middle .play-zone .jsms-zone {
   height: 200px;
   display: flex;
@@ -186,7 +200,7 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   box-shadow: 0 0 50px #68B4FB;
-  width: 80%;
+  width: 90%;
   height: 60px;
 }
 .content .middle .play-zone .jsms-zone #img_and_text #img_zone {
@@ -227,39 +241,52 @@ body {
 .content .middle .play-zone .jsms-zone #img_and_text .deafening_blast {
   background-image: url("../images/spells/deafening_blast.png");
 }
-.content .middle .play-zone .jsms-zone #img_and_text span {
+.content .middle .play-zone .jsms-zone #img_and_text #text_zone {
   font-size: 30px;
   margin-left: 30px;
   vertical-align: middle;
   display: none;
 }
-.content .middle .play-zone .orb-container {
+.content .middle .play-zone .szms-zone {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content .middle .play-zone .szms-zone #images_and_texts {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 0 0 50px #68B4FB;
+  width: 90%;
+  height: 60px;
+}
+.content .middle .play-zone #orb_container {
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
 }
-.content .middle .play-zone .orb-container #orb_1,
-.content .middle .play-zone .orb-container #orb_2,
-.content .middle .play-zone .orb-container #orb_3 {
+.content .middle .play-zone #orb_container #orb_1,
+.content .middle .play-zone #orb_container #orb_2,
+.content .middle .play-zone #orb_container #orb_3 {
   width: 100px;
   height: 100px;
   border-radius: 50px;
   border: 1px solid #6e6e6e;
   margin: 5px;
 }
-.content .middle .play-zone .orb-container .quash {
+.content .middle .play-zone #orb_container .quash {
   background-image: url("../images/spells/quash.png");
   background-size: 100% 100%;
 }
-.content .middle .play-zone .orb-container .wex {
+.content .middle .play-zone #orb_container .wex {
   background-image: url("../images/spells/wex.png");
   background-size: 100% 100%;
 }
-.content .middle .play-zone .orb-container .exort {
+.content .middle .play-zone #orb_container .exort {
   background-image: url("../images/spells/exort.png");
   background-size: 100% 100%;
 }
-.content .middle .play-zone .skill-buttons {
+.content .middle .play-zone #skill_buttons {
   display: flex;
   justify-content: center;
   background-image: url("../images/panel-bg.jpg");
@@ -267,95 +294,95 @@ body {
   height: 161px;
   position: relative;
 }
-.content .middle .play-zone .skill-buttons .key-and-img {
+.content .middle .play-zone #skill_buttons .key-and-img {
   position: relative;
   top: 29px;
 }
-.content .middle .play-zone .skill-buttons .first {
+.content .middle .play-zone #skill_buttons .first {
   position: absolute;
   left: 22px;
 }
-.content .middle .play-zone .skill-buttons .second {
+.content .middle .play-zone #skill_buttons .second {
   position: absolute;
   left: 120px;
 }
-.content .middle .play-zone .skill-buttons .third {
+.content .middle .play-zone #skill_buttons .third {
   position: absolute;
   left: 218px;
 }
-.content .middle .play-zone .skill-buttons .fourth {
+.content .middle .play-zone #skill_buttons .fourth {
   position: absolute;
   left: 316px;
 }
-.content .middle .play-zone .skill-buttons .fourth .cold_snap {
+.content .middle .play-zone #skill_buttons .fourth .cold_snap {
   background-image: url("../images/spells/cold_snap.png");
 }
-.content .middle .play-zone .skill-buttons .fourth .ghost_walk {
+.content .middle .play-zone #skill_buttons .fourth .ghost_walk {
   background-image: url("../images/spells/ghost_walk.png");
 }
-.content .middle .play-zone .skill-buttons .fourth .ice_wall {
+.content .middle .play-zone #skill_buttons .fourth .ice_wall {
   background-image: url("../images/spells/ice_wall.png");
 }
-.content .middle .play-zone .skill-buttons .fourth .emp {
+.content .middle .play-zone #skill_buttons .fourth .emp {
   background-image: url("../images/spells/emp.png");
 }
-.content .middle .play-zone .skill-buttons .fourth .tornado {
+.content .middle .play-zone #skill_buttons .fourth .tornado {
   background-image: url("../images/spells/tornado.png");
 }
-.content .middle .play-zone .skill-buttons .fourth .alacrity {
+.content .middle .play-zone #skill_buttons .fourth .alacrity {
   background-image: url("../images/spells/alacrity.png");
 }
-.content .middle .play-zone .skill-buttons .fourth .sun_strike {
+.content .middle .play-zone #skill_buttons .fourth .sun_strike {
   background-image: url("../images/spells/sun_strike.png");
 }
-.content .middle .play-zone .skill-buttons .fourth .forge_spirit {
+.content .middle .play-zone #skill_buttons .fourth .forge_spirit {
   background-image: url("../images/spells/forge_spirit.png");
 }
-.content .middle .play-zone .skill-buttons .fourth .chaos_meteor {
+.content .middle .play-zone #skill_buttons .fourth .chaos_meteor {
   background-image: url("../images/spells/chaos_meteor.png");
 }
-.content .middle .play-zone .skill-buttons .fourth .deafening_blast {
+.content .middle .play-zone #skill_buttons .fourth .deafening_blast {
   background-image: url("../images/spells/deafening_blast.png");
 }
-.content .middle .play-zone .skill-buttons .fifth {
+.content .middle .play-zone #skill_buttons .fifth {
   position: absolute;
   left: 414px;
 }
-.content .middle .play-zone .skill-buttons .fifth .cold_snap {
+.content .middle .play-zone #skill_buttons .fifth .cold_snap {
   background-image: url("../images/spells/cold_snap.png");
 }
-.content .middle .play-zone .skill-buttons .fifth .ghost_walk {
+.content .middle .play-zone #skill_buttons .fifth .ghost_walk {
   background-image: url("../images/spells/ghost_walk.png");
 }
-.content .middle .play-zone .skill-buttons .fifth .ice_wall {
+.content .middle .play-zone #skill_buttons .fifth .ice_wall {
   background-image: url("../images/spells/ice_wall.png");
 }
-.content .middle .play-zone .skill-buttons .fifth .emp {
+.content .middle .play-zone #skill_buttons .fifth .emp {
   background-image: url("../images/spells/emp.png");
 }
-.content .middle .play-zone .skill-buttons .fifth .tornado {
+.content .middle .play-zone #skill_buttons .fifth .tornado {
   background-image: url("../images/spells/tornado.png");
 }
-.content .middle .play-zone .skill-buttons .fifth .alacrity {
+.content .middle .play-zone #skill_buttons .fifth .alacrity {
   background-image: url("../images/spells/alacrity.png");
 }
-.content .middle .play-zone .skill-buttons .fifth .sun_strike {
+.content .middle .play-zone #skill_buttons .fifth .sun_strike {
   background-image: url("../images/spells/sun_strike.png");
 }
-.content .middle .play-zone .skill-buttons .fifth .forge_spirit {
+.content .middle .play-zone #skill_buttons .fifth .forge_spirit {
   background-image: url("../images/spells/forge_spirit.png");
 }
-.content .middle .play-zone .skill-buttons .fifth .chaos_meteor {
+.content .middle .play-zone #skill_buttons .fifth .chaos_meteor {
   background-image: url("../images/spells/chaos_meteor.png");
 }
-.content .middle .play-zone .skill-buttons .fifth .deafening_blast {
+.content .middle .play-zone #skill_buttons .fifth .deafening_blast {
   background-image: url("../images/spells/deafening_blast.png");
 }
-.content .middle .play-zone .skill-buttons .sixth {
+.content .middle .play-zone #skill_buttons .sixth {
   position: absolute;
   left: 512px;
 }
-.content .middle .play-zone .skill-buttons .hotkeys {
+.content .middle .play-zone #skill_buttons .hotkeys {
   position: absolute;
   width: 21px;
   height: 22px;
@@ -369,12 +396,12 @@ body {
   text-align: left;
   color: #bbb2ad;
 }
-.content .middle .play-zone .skill-buttons img {
+.content .middle .play-zone #skill_buttons img {
   width: 72px;
   height: 72px;
   border-radius: 4px;
 }
-.content .middle .play-zone .skill-buttons .control-buttons {
+.content .middle .play-zone #skill_buttons .control-buttons {
   display: flex;
   position: absolute;
   bottom: 10px;

@@ -9,6 +9,7 @@ function $(id) {
     return typeof id === "string" ? document.getElementById(id) : null;
 }
 
+//绑定元素
 var btnSzms = $("btn_szms"),
     btnJsms = $("btn_jsms"),
     introduceTitle = $("introduce_title"),
@@ -21,8 +22,8 @@ var btnSzms = $("btn_szms"),
     left = document.getElementsByClassName("left")[0],
     buttonsAndIntroduce = $("buttons_and_introduce"),
     playZone = $("play_zone"),
-    btnBack = $("btn_back"),
-    btnRestart = $("btn_restart"),
+    btnRestart = document.getElementsByClassName("btn-restart"),
+    btnExit = document.getElementsByClassName("btn-exit"),
     startButton = $("start_button"),
     stopWatch = $("stopwatch"),
     imgZone = $("img_zone"),
@@ -31,7 +32,12 @@ var btnSzms = $("btn_szms"),
     orb2 = $("orb_2"),
     orb3 = $("orb_3"),
     imgSkill1 = $("img_skill_1"),
-    imgSkill2 = $("img_skill_2");
+    imgSkill2 = $("img_skill_2"),
+    overControlButtons = $("over_control_buttons"),
+    jsmsZone = $("jsms_zone"),
+    szmsZone = $("szms_zone"),
+    orbContainer = $("orb_container"),
+    skillButtons = $("skill_buttons");
 
 //鼠标悬停“实战模式”按钮
 btnSzms.onmouseover = function () {
@@ -68,32 +74,41 @@ btnDefaultKey.onclick = function () {
 };
 
 //点击“极速模式”按钮
-
-
 btnJsms.onclick = function () {
     buttonsAndIntroduce.style.display = "none";
     playZone.style.display = "block";
+    jsmsZone.style.display = "flex";
+    szmsZone.style.display = "none";
+    overControlButtons.style.display = "none";
 };
 
-//点击“返回”按钮
-
-
-btnBack.onclick = function () {
-    buttonsAndIntroduce.style.display = "flex";
-    playZone.style.display = "none";
-};
 
 //点击“实战模式”按钮
 btnSzms.onclick = function () {
     buttonsAndIntroduce.style.display = "none";
     playZone.style.display = "block";
+    jsmsZone.style.display = "none";
+    szmsZone.style.display = "flex";
+    overControlButtons.style.display = "none";
 };
+
+var stopwatch = new Stopwatch();
+var game = new GameManager("jsms");
 
 //点击“重新开始”按钮
+for (var i = 0; i < btnRestart.length; i++) {
+    btnRestart[i].onclick = function () {
+        game.restart();
+    };
+}
 
-btnRestart.onclick = function () {
-    startButton.disabled = false;
-};
+//点击“返回”按钮
+for (var j = 0; j < btnExit.length; j++) {
+    btnExit[j].onclick = function () {
+        game.exit();
+    };
+}
+
 //点击“恢复默认”按钮
 
 //点击“音乐”按钮
@@ -102,34 +117,51 @@ btnRestart.onclick = function () {
 
 //点击各个技能键位
 
-//定义一个游戏的构造函数
-function Game() {
-}
 
-Game.prototype.randomSkill = function () {
-    var arr = [           //数组中包括10个对象，每个对象都有text和nameOfClass两个属性
-        {text: "急速冷却", nameOfClass: "cold_snap"},
-        {text: "幽灵漫步", nameOfClass: "ghost_walk"},
-        {text: "寒冰之墙", nameOfClass: "ice_wall"},
-        {text: "电磁脉冲", nameOfClass: "emp"},
-        {text: "强袭飓风", nameOfClass: "tornado"},
-        {text: "灵动迅捷", nameOfClass: "alacrity"},
-        {text: "阳炎冲击", nameOfClass: "sun_strike"},
-        {text: "熔炉精灵", nameOfClass: "forge_spirit"},
-        {text: "混沌陨石", nameOfClass: "chaos_meteor"},
-        {text: "超震声波", nameOfClass: "deafening_blast"}
-    ];
+var numberOfSkills = 3;
+var handler = function (event) {
+    var quashNum = 0;
+    var wexNum = 0;
+    var exortNum = 0;
 
-    var num = Math.floor(Math.random() * 10);//num范围为[0,9]
-    imgZone.className = arr[num].nameOfClass;
-    textZone.innerText = arr[num].text;
-    imgZone.style.display = "inline-block";
-    textZone.style.display = "inline";
+    for (var i = 0; i < 3; i++) {
+        var orbArray = [orb1, orb2, orb3];
+        switch (orbArray[i].className) {
+            case 'quash':
+                quashNum += 1;
+                break;
+            case 'wex':
+                wexNum += 1;
+                break;
+            case 'exort':
+                exortNum += 1;
+                break;
+        }
+    }
+    var invokeCode = "s" + quashNum + wexNum + exortNum;
 
+    if (event.key === "q" || event.key === "w" || event.key === "e") {
+        orb1.className = orb2.className;
+        orb2.className = orb3.className;
+        orb3.className = orbClassName(event.key);
+    } else if (event.key === "r" && imgSkill1.className !== invokeSkillsName[invokeCode]) {  //需要满足两个条件（1，按了r键 2，与上一次的组合不同）才改变技能图片
+        imgSkill2.className = imgSkill1.className;
+        imgSkill1.className = invokeSkillsName[invokeCode];
+    }
+
+    if (imgSkill1.className === imgZone.className) {                    //如果玩家操作正确
+        startButton.innerText = "剩余技能" + --numberOfSkills;         //技能数显示减1
+        game.randomSkill();       //重新随机出技能题目
+    }
+    if (numberOfSkills === 0) {  //玩家完成任务
+        startButton.innerText = "游戏完成！";
+        stopwatch.stop();
+        jsmsZone.style.display = "none";
+        orbContainer.style.display = "none";
+        skillButtons.style.display = "none";
+        overControlButtons.style.display = "block";
+    }
 };
-
-var numberOfSkills = 1;
-
 
 //点击“开始游戏”按钮
 startButton.addEventListener("click", function () {
@@ -137,58 +169,16 @@ startButton.addEventListener("click", function () {
     //点击开始按钮之后，让其失去点击功能
     startButton.disabled = "disabled";
     startButton.innerText = "剩余技能" + numberOfSkills;
+    startButton.style.cursor = "auto";
 
     //秒表开始计时
-    var stopwatch = new Stopwatch();
-
-
     stopwatch.start();
+
     //随机出现技能图片和名字
-    var game = new Game();
     game.randomSkill();
 
     //对键盘进行监听
-    document.addEventListener("keydown", function (event) {
-
-        var quashNum = 0;
-        var wexNum = 0;
-        var exortNum = 0;
-
-        for (var i = 0; i < 3; i++) {
-            var orbArray = [orb1, orb2, orb3];
-            switch (orbArray[i].className) {
-                case 'quash':
-                    quashNum += 1;
-                    break;
-                case 'wex':
-                    wexNum += 1;
-                    break;
-                case 'exort':
-                    exortNum += 1;
-                    break;
-            }
-        }
-        var invokeCode = "s" + quashNum + wexNum + exortNum;
-
-        if (event.key === "q" || event.key === "w" || event.key === "e") {
-            orb1.className = orb2.className;
-            orb2.className = orb3.className;
-            orb3.className = orbClassName(event.key);
-        } else if (event.key === "r" && imgSkill1.className !== invokeSkillsName[invokeCode]) {  //需要满足两个条件（1，按了r键 2，与上一次的组合不同）才改变技能图片
-            imgSkill2.className = imgSkill1.className;
-            imgSkill1.className = invokeSkillsName[invokeCode];
-        }
-
-        if (imgSkill1.className === imgZone.className) {                    //如果玩家操作正确
-            startButton.innerText = "剩余技能" + --numberOfSkills;         //技能数显示减1
-            game.randomSkill();       //重新随机出技能题目
-        }
-        if (numberOfSkills === 0) {
-            startButton.innerText = "游戏完成！";
-            stopwatch.stop();
-        }
-
-    });
+    document.addEventListener("keydown", handler);
 });
 
 //声明函数，用来接收输入的按键，并返回与之对应的class name

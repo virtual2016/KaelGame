@@ -9,6 +9,10 @@ body {
   font-family: "Microsoft YaHei";
 }
 
+body button:focus {
+  outline: none;
+}
+
 .header {
   margin: 0 auto;
   height: 200px;
@@ -155,8 +159,15 @@ body {
         margin-top: 20px;
         text-shadow: 0 0 10px #9FE6E2;
       }
-      #over-control-buttons{
-        display: none;
+      #over_control_buttons {
+        padding-top: 15px;
+        .btn-restart, .btn-exit {
+          font-size: 20px;
+          font-weight: bold;
+          border-radius: 10px;
+          cursor: pointer;
+          padding: 10px 30px;
+        }
       }
       .jsms-zone {
         height: 200px;
@@ -167,14 +178,13 @@ body {
           padding-top: 10px;
           padding-bottom: 10px;
           box-shadow: 0 0 50px #68B4FB;
-          width: 80%;
+          width: 90%;
           height: 60px;
           #img_zone {
             vertical-align: middle;
             width: 60px;
             height: 60px;
             box-shadow: 0 0 10px #CEEBFF;
-            //display: inline-block;
             background-size: auto;
             display: none;
           }
@@ -210,7 +220,7 @@ body {
             background-image: url("../images/spells/deafening_blast.png");
           }
 
-          span {
+          #text_zone {
             font-size: 30px;
             margin-left: 30px;
             vertical-align: middle;
@@ -219,7 +229,21 @@ body {
         }
 
       }
-      .orb-container {
+      .szms-zone{
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        #images_and_texts{
+          padding-top: 10px;
+          padding-bottom: 10px;
+          box-shadow: 0 0 50px #68B4FB;
+          width: 90%;
+          height: 60px;
+        }
+      }
+
+      #orb_container {
         display: flex;
         justify-content: center;
         margin-bottom: 30px;
@@ -244,7 +268,7 @@ body {
         }
 
       }
-      .skill-buttons {
+      #skill_buttons {
         display: flex;
         justify-content: center;
         background-image: url("../images/panel-bg.jpg");

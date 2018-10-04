@@ -127,9 +127,9 @@
         <div id="play_zone" class="play-zone">
             <button id="start_button" class="start-button">开始游戏（点击）</button>
             <div id="stopwatch">00:00</div>
-            <div id="over-control-buttons">
-                <button class="restart">重新开始</button>
-                <button class="back">返回</button>
+            <div id="over_control_buttons">
+                <button class="btn-restart">重新开始</button>
+                <button class="btn-exit">返回</button>
             </div>
             <div id="jsms_zone" class="jsms-zone">
                 <div id="img_and_text">
@@ -137,12 +137,86 @@
                     <span id="text_zone"></span>
                 </div>
             </div>
-            <div class="orb-container">
+            <div id="szms_zone" class="szms-zone">
+                <div id="images_and_texts">
+                    <div id="numOfSpells_1">
+                        <div class="img-zone"></div>
+                        <span class="text-zone"></span>
+                    </div>
+                    <div id="numOfSpells_2">
+                        <div class="img-zone"></div>
+                        <span class="text-zone"></span>
+
+                        <div class="img-zone"></div>
+                        <span class="text-zone"></span>
+                    </div>
+                    <div id="numOfSpells_3">
+                        <div class="img-zone"></div>
+                        <span class="text-zone"></span>
+
+                        <div class="img-zone"></div>
+                        <span class="text-zone"></span>
+
+                        <div class="img-zone"></div>
+                        <span class="text-zone"></span>
+                    </div>
+                    <div id="numOfSpells_4">
+                        <div class="img-zone"></div>
+                        <span class="text-zone"></span>
+
+                        <div class="img-zone"></div>
+                        <span class="text-zone"></span>
+
+                        <div class="img-zone"></div>
+                        <span class="text-zone"></span>
+
+                        <div class="img-zone"></div>
+                        <span class="text-zone"></span>
+                    </div>
+                    <div id="numOfSpells_5">
+                        <div class="img-zone"></div>
+                        <span class="text-zone"></span>
+
+                        <div class="img-zone"></div>
+                        <span class="text-zone"></span>
+
+                        <div class="img-zone"></div>
+                        <span class="text-zone"></span>
+
+                        <div class="img-zone"></div>
+                        <span class="text-zone"></span>
+
+                        <div class="img-zone"></div>
+                        <span class="text-zone"></span>
+                    </div>
+                    <div id="numOfSpells_6">
+                        <div class="img-zone"></div>
+                        <span class="text-zone"></span>
+
+                        <div class="img-zone"></div>
+                        <span class="text-zone"></span>
+
+                        <div class="img-zone"></div>
+                        <span class="text-zone"></span>
+
+                        <div class="img-zone"></div>
+                        <span class="text-zone"></span>
+
+                        <div class="img-zone"></div>
+                        <span class="text-zone"></span>
+
+                        <div class="img-zone"></div>
+                        <span class="text-zone"></span>
+                    </div>
+
+                </div>
+            </div>
+            <div id="orb_container">
                 <div id="orb_1"></div>
                 <div id="orb_2"></div>
                 <div id="orb_3"></div>
             </div>
-            <div class="skill-buttons">
+            <div id="skill_buttons">
                 <div class="first key-and-img">
                     <div class="hotkeys hotkey-1">Q</div>
                     <img src="images/spells/quash.png">
@@ -168,8 +242,8 @@
                     <img src="images/spells/invoke.png">
                 </div>
                 <div class="control-buttons">
-                    <button class="restart" id="btn_restart">重新开始</button>
-                    <button class="back" id="btn_back">返回</button>
+                    <button class="btn-restart">重新开始</button>
+                    <button class="btn-exit">返回</button>
                 </div>
             </div>
         </div>
@@ -207,12 +281,12 @@
             <tr>
                 <td><img src="images/spells/deafening_blast.png">超震声波 - Q W E</td>
             </tr>
-
         </table>
     </div>
 </div>
 <div class="footer"></div>
-<script src="js/homepage.js"></script>
 <script src="js/stopwatch.js"></script>
+<script src="js/game.js"></script>
+<script src="js/homepage.js"></script>
 </body>
 </html>
