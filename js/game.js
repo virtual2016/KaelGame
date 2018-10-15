@@ -36,9 +36,9 @@ GameManager.prototype.restart = function () {
     startButton.disabled = false;
     startButton.innerText = "开始游戏（点击）";
     startButton.style.cursor = "pointer";
-    if (this.gameType === "jsms"){
+    if (this.gameType === "jsms") {
         jsmsZone.style.display = "flex";
-    } else if (this.gameType === "szms"){
+    } else if (this.gameType === "szms") {
         szmsZone.style.display = "flex";
     }
     orbContainer.style.display = "flex";
@@ -47,6 +47,9 @@ GameManager.prototype.restart = function () {
     stopwatch.reset();                              //秒表重置
     imgZone.style.display = "none";
     textZone.style.display = "none";
+};
+
+//结束游戏，并返回到游戏模式选择界面
 GameManager.prototype.exit = function () {
     buttonsAndIntroduce.style.display = "flex";
     orb1.className = "";
@@ -55,10 +58,6 @@ GameManager.prototype.exit = function () {
     imgSkill1.className = "";
     imgSkill2.className = "";
     document.removeEventListener("keydown", handler);
-};
-
-//结束游戏，并返回到游戏模式选择界面
     this.restart();
     playZone.style.display = "none";
 };
-
