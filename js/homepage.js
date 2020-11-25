@@ -93,19 +93,21 @@ btnSzms.onclick = function () {
 };
 
 var stopwatch = new Stopwatch();
-var game = new GameManager("jsms");
+var game1 = new GameManager("jsms");
+var game2 = new GameManager("szms");
 
 //点击“重新开始”按钮
 for (var i = 0; i < btnRestart.length; i++) {
-    btnRestart[i].onclick = function () {
-        game.restart();
+    btnRestart[0].onclick = function () {
+        game1.restart();
+        game2.restart();
     };
 }
 
 //点击“返回”按钮
 for (var j = 0; j < btnExit.length; j++) {
     btnExit[j].onclick = function () {
-        game.exit();
+        game1.exit();
     };
 }
 
@@ -175,7 +177,7 @@ startButton.addEventListener("click", function () {
     stopwatch.start();
 
     //随机出现技能图片和名字
-    game.randomSkill();
+    game1.randomSkill();
 
     //对键盘进行监听
     document.addEventListener("keydown", handler);

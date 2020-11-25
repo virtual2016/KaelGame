@@ -9,8 +9,8 @@ function GameManager(gameType) {
     this.gameType = gameType;
 }
 
-//随机出技能
-GameManager.prototype.randomSkill = function () {
+//jsms随机出技能
+GameManager.prototype.randomSkill = function (jsms) {
     var arr = [           //数组中包括10个对象，每个对象都有text和nameOfClass两个属性
         {text: "急速冷却", nameOfClass: "cold_snap"},
         {text: "幽灵漫步", nameOfClass: "ghost_walk"},
@@ -47,17 +47,17 @@ GameManager.prototype.restart = function () {
     stopwatch.reset();                              //秒表重置
     imgZone.style.display = "none";
     textZone.style.display = "none";
-};
-
-//结束游戏，并返回到游戏模式选择界面
-GameManager.prototype.exit = function () {
-    buttonsAndIntroduce.style.display = "flex";
     orb1.className = "";
     orb2.className = "";
     orb3.className = "";
     imgSkill1.className = "";
     imgSkill2.className = "";
     document.removeEventListener("keydown", handler);
+};
+
+//结束游戏，并返回到游戏模式选择界面
+GameManager.prototype.exit = function () {
     this.restart();
     playZone.style.display = "none";
+    buttonsAndIntroduce.style.display = "flex";
 };
