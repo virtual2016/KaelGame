@@ -194,7 +194,7 @@ function orbClassName(key) {
     }
 }
 
-//技能和技能名的键值对
+//技能和技能名的键值对(key-value pairs)
 var invokeSkillsName = {
     s300: "cold_snap",
     s210: "ghost_walk",

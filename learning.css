@@ -8,3 +8,9 @@ body {
     text-align: center;
     padding: 0 200px;
 }
+
+li:first-child {
+    color: red;
+}
+
+
